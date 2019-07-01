@@ -4,12 +4,12 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
+title: Winsum技术博客
 subtitle:
 description:
-author: John Doe
+author: Colin
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: zh-Hans
 date_format: '%Y-%m-%d'
 
 # URL
@@ -35,7 +35,7 @@ paginate: 10
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
-#excerpt_separator: <!-- more -->
+excerpt_separator: <!-- more -->
 
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
@@ -79,7 +79,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Java, ROS"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -87,13 +87,13 @@ keywords: "Jekyll, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+#since: 2019
 
 # icon between year and author @Footer
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -118,9 +118,9 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
+  categories: /categories/
   #about: /about/
-  archives: /archives/
+  #archives: /archives/
   tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
@@ -151,8 +151,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
@@ -256,8 +256,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  #position: right
+  #position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -362,7 +362,7 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -393,11 +393,11 @@ wildfire:
   # version - It's recommended to use the following versions.
   loaderVersion: 1.2.5 # https://www.npmjs.com/package/wildfire-comment
   useDev: true
-  version: 0.5.6 
+  version: 0.5.6
   # database config
   databaseProvider: firebase # or wilddog
   firebase: # your firebase config goes here ↓
-    apiKey: 
+    apiKey:
     authDomain:
     databaseURL:
     projectId:
@@ -408,8 +408,8 @@ wildfire:
   # other configs
   theme: light # or dark
   locale: en # or other locales, e.g. zh-CN
-  defaultAvatarURL: 
-# Any question? 
+  defaultAvatarURL:
+# Any question?
 # Raise an issue here: https://github.com/cheng-kang/wildfire/issues
 # </wildfire>
 
