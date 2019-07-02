@@ -285,32 +285,32 @@ echo '<!-- autolabor_simulation_base demo -->
 
 此时我们会发现打开了一个窗口，如图所示
 
-![rviz窗口](https://upload-images.jianshu.io/upload_images/8479743-44f99efffece7a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![rviz窗口](/assets/post_pic/simulation-intro-base/rviz_1.png)
 
 
 在rviz的左侧Displays窗口，找到 Global Options -\> Fixed Frame，并将后面的值选成odom，如下图
 
-![修改Fixed Frame](https://upload-images.jianshu.io/upload_images/8479743-48ec108b3edc60a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![修改Fixed Frame](/assets/post_pic/simulation-intro-base/rviz_2.png)
 
 
 点击rviz左下角的Add按钮，在跳出的窗口中选择 rviz -\> TF，并单击OK按钮
 
-![Add TF](https://upload-images.jianshu.io/upload_images/8479743-6d009b9de30b026c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Add TF](/assets/post_pic/simulation-intro-base/rviz_3.png)
 
 
 同上操作步骤，点击rviz左下角的Add按钮，添加 rviz -\> RobotModel，并单击OK按钮
 
-![Add RobotModel](https://upload-images.jianshu.io/upload_images/8479743-af9f0d2eae8e1ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Add RobotModel](/assets/post_pic/simulation-intro-base/rviz_4.png)
 
 
 我们在中间区域看到一个小黄车，此时我们就可以使用键盘上的上，下，左，右控制小车行进。
 
-![控制小车行驶](https://upload-images.jianshu.io/upload_images/8479743-2eb18bfb4eef7156.gif?imageMogr2/auto-orient/strip)
+![控制小车行驶](/assets/post_pic/simulation-intro-base/rviz_5.gif)
 
 
 我们再来详细看一下坐标转换关系，关闭小车模型，将视窗放大。
 
-![TF转换关系](https://upload-images.jianshu.io/upload_images/8479743-e5c0ec51c8b68a12.gif?imageMogr2/auto-orient/strip)
+![TF转换关系](/assets/post_pic/simulation-intro-base/rviz_6.gif)
 
 
 根据默认设置，base\_link表示小车坐标系，随着通过键盘控制，base\_link坐标系在移动，在中间两个静止的坐标系分别是odom(里程计编码器)和real\_map(真实坐标系)。由于我们没有设置里程计噪音real\_map和odom始终重合，也就意味着里程计信息完全准确。
@@ -332,7 +332,7 @@ roslaunch autolabor_simulation_base demo_simulation_base.launch
 
 按照上面的方法在rviz中添加tf数据显示
 
-![带噪音的情况](https://upload-images.jianshu.io/upload_images/8479743-7e1e3ed481278800.gif?imageMogr2/auto-orient/strip)
+![带噪音的情况](/assets/post_pic/simulation-intro-base/rviz_7.gif)
 
 
 会发现在小车行驶过程中，odom和real\_map之间发生相对变化，这个变化就是里程计偏离真实位置的情况。
