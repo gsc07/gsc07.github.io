@@ -27,7 +27,6 @@ http://gazebosim.org
 [Msg] Waiting for master.
 [Msg] Connected to gazebo master @ http://127.0.0.1:11345
 [Msg] Publicized address: 172.16.20.205
-
 ```
 
 通过日志我们可以看到Master默认开启一个端口为11345的TCP服务，这个服务用来给客服端提供相应的注册信息，比如话题的开启，关闭，相应话题通信使用的端口等。
@@ -94,7 +93,6 @@ message GzString
 {
   required string data = 1;
 }
-
 ```
 
 serialized_data解析后结果为
