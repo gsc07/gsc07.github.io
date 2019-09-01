@@ -284,7 +284,7 @@ message Packet
 }
 ```
 
-其中`type="sub"`， `serialized_data`是`Subscribe`的`protobuf`编码消息，这个数据和你给服务端发送的消息一致
+其中`type="sub"`， `serialized_data`是`Subscribe`的`protobuf`编码消息
 
 ```
 message Subscribe
@@ -308,3 +308,65 @@ message Subscribe
 ```
 
 其中Header是Message Protobuf 编码长度的十六进制数的ASCII编码，与上面介绍类似
+
+### 注销 ：客户端->Master节点
+
+当不想再发送话题的时候，我们可以取消发送话题，这个时候需要给Master发送注销指令，格式如下：
+
+```
+| Header (8 Byte) | Packet 对象 |
+```
+
+其中Packet格式与上述相同
+
+```
+message Packet
+{
+  required Time stamp            = 1;
+  required string type           = 2;
+  required bytes serialized_data = 3;
+}
+```
+
+其中`type="unadvertise"`，`serialized_data`是`Publish`的`protobuf`编码消息
+
+```
+message Publish
+{
+  required string topic    = 1;
+  required string msg_type = 2;
+  required string host     = 3;
+  required uint32 port     = 4;
+}
+```
+
+### 回复：Master节点->客户端
+
+当Master节点收到注销请求时，会回复确认消息，格式如下：
+
+```
+| Header (8 Byte) | Packet 对象 |
+```
+
+其中Packet格式与上述相同
+
+```
+message Packet
+{
+  required Time stamp            = 1;
+  required string type           = 2;
+  required bytes serialized_data = 3;
+}
+```
+
+其中`type="publisher_del"`，`type=""`，`serialized_data`是`Publish`的`protobuf`编码消息
+
+```
+message Publish
+{
+  required string topic    = 1;
+  required string msg_type = 2;
+  required string host     = 3;
+  required uint32 port     = 4;
+}
+```
